@@ -1,0 +1,132 @@
+<?php
+session_start();
+$loggedIn = isset($_SESSION['user_id']);
+
+if (!$loggedIn && isset($_GET['login'])) {
+}
+
+if (!$loggedIn) {
+    header('Location: login.php');
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DragonBall Store</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('./Img_VD/asd.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+        header {
+            margin-top: 50px;
+            color: rebeccapurple;
+        }
+
+        article {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .social-media {
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #333;
+        }
+
+        footer {
+            font-style: italic;
+            font-size: small;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="start.php">Home</a></li>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="clients.php">Customers</a></li>
+        <li><a href="orders.php">Orders</a></li>
+        <li><a href="add_product.php">Add Product</a></li>
+        <li><a href="add_customer.php">Add Customer</a></li>
+        <li><a href="place_order.php">Place Order</a></li>
+        <li style="float:right;"><a href="logout.php">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <header>
+        <h1>Welcome to DragonBall Store</h1>
+        <h3>Your One-Stop Shop for DragonBall Merchandise</h3>
+    </header>
+
+    <article>
+        <p>Explore a wide range of high-quality DragonBall merchandise at DragonBall Store.</p>
+        <p>From action figures to clothing, we have everything you need to dive into the world of DragonBall.</p>
+        <p>Discover the perfect products for your collection and enjoy a seamless shopping experience.</p>
+    </article>
+
+    <div class="social-media">
+        <br><h3>Contact Us</h3>
+        <a href="https://www.facebook.com/profile.php?id=100073473338451" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-square">Facebook</i>
+        </a>
+        <a href="https://www.instagram.com/_xlr8.kaysonv_" target="_blank" class="social-icon">
+            <i class="fab fa-instagram">Instagram</i>
+        </a>
+        <a href="https://twitter.com/vudinhloc" target="_blank" class="social-icon">
+            <i class="fab fa-twitter-square">Twitter</i>
+        </a>
+    </div>
+</div>
+
+<footer>
+    &copy; <?php echo date("Y"); ?> DragonBall Store
+</footer>
+
+</body>
+
+</html>
